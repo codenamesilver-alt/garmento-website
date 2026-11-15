@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Design Tokens - Garmento Digital Laundry */
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-ivory: #FAF9F6;
+  --color-gold: #B89532;
+  --color-navy: #142D4E;
+  --color-light-blue: #EAF2F8;
+  --color-body-text: #414B56;
+
+  /* Semantic */
+  --color-background: #FFFFFF;
+  --color-foreground: #414B56;
+  --color-primary: #142D4E;
+  --color-accent: #B89532;
+  --color-muted: #FAF9F6;
+  --color-muted-foreground: #414B56;
+  --color-border: rgba(20, 45, 78, 0.1);
+
+  /* Fonts */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-nav: var(--font-poppins), system-ui, sans-serif;
+
+  /* Spacing */
+  --section-padding: 5rem;
+  --container-max: 1280px;
+}
+
+@theme inline {
+  --color-gold: var(--color-gold);
+  --color-navy: var(--color-navy);
+  --color-ivory: var(--color-ivory);
+  --color-light-blue: var(--color-light-blue);
+  --color-body-text: var(--color-body-text);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-nav: var(--font-nav);
+}
+
+/* Base styles */
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+}
+
+/* Utility classes */
+.font-heading { font-family: var(--font-heading); }
+.font-body { font-family: var(--font-body); }
+.font-nav { font-family: var(--font-nav); }
+
+.text-gold { color: var(--color-gold); }
+.text-navy { color: var(--color-navy); }
+.bg-gold { background-color: var(--color-gold); }
+.bg-navy { background-color: var(--color-navy); }
+.bg-ivory { background-color: var(--color-ivory); }
+.bg-light-blue { background-color: var(--color-light-blue); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-gold);
+  color: white;
+}
+
+/* Utility: hide scrollbar but keep scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
